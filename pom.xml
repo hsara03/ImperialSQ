@@ -1,0 +1,23 @@
+<dependencies>
+    <!-- Selenium WebDriver -->
+    <dependency>
+        <groupId>org.selenium.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.141.59</version> <!-- Utiliza la última versión disponible -->
+
+    </dependency>
+
+    <!-- Cucumber -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>6.10.4</version> <!-- Utiliza la última versión disponible -->
+
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>6.10.4</version> <!-- Utiliza la última versión disponible -->
+
+    </dependency>
+</dependencies>
