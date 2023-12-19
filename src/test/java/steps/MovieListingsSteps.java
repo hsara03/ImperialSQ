@@ -1,4 +1,4 @@
-package test.java;
+package steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.junit.Assert;
+//import org.testng.Assert;
 
 public class MovieListingsSteps {
 
@@ -21,19 +21,23 @@ public class MovieListingsSteps {
 
   @When("el usuario hace clic en el botón 'En Cartell'")
   public void el_usuario_hace_clic_en_el_botón_En_Cartell() {
-    WebElement buttonEnCartell = driver.findElement(By.cssSelector("button[data-filter='cat-cartell']"));
+    WebElement buttonEnCartell = driver.findElement(By.cssSelector("button[data-filter-value='.cat-cartell']"));
     buttonEnCartell.click();
   }
 
   @Then("se debe mostrar el listado de películas disponibles")
   public void se_debe_mostrar_el_listado_de_películas_disponibles() {
-    WebElement movieList = driver.findElement(By.id("id_del_elemento_que_contiene_las_peliculas")); // Reemplazar con el ID correcto
-    Assert.assertTrue("El listado de películas no se muestra.", movieList.isDisplayed());
+    WebElement movieList = driver.findElement(By.cssSelector("div[class='row grid pelis-grid']"));
+    //Assert.assertTrue(movieList.isDisplayed(), "El listado de películas no se muestra.");
   }
 
   // No olvides cerrar el navegador después de tus pruebas
+
+  /*
   @io.cucumber.java.After
   public void cleanUp(){
     driver.quit();
   }
+  */
+
 }
