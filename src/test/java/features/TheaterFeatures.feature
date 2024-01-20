@@ -1,32 +1,43 @@
 Feature: Verificación de las opciones y su ubicación en las secciones de Cines Imperial
 
   Background:
-    Given el usuario ha abierto el navegador
-    And el usuario está en la página principal de "https://www.cinesimperial.com/"
+    Given el usuario esta en la pagina principal de cinesimperial
 
-  Scenario: Las opciones "Dolby Digital", "e-Entrada", y "Festes d'aniversari i lloguer de sales" se muestran correctamente en "Cartellera"
-    When el usuario navega a la sección "Cartellera"
+  Scenario: Las opciones se muestran en Index
+    When el usuario navega a la sección Index
     Then las opciones pertinentes se muestran en la parte inferior
-    And se muestra información relevante para cada opción seleccionada
+    And las opciones pueden ser alternadas
 
-  Scenario: Las opciones pertinentes se muestran correctamente en "Esdeveniments"
-    When el usuario navega a la sección "Esdeveniments"
-    Then las opciones pertinentes se muestran en la parte inferior
-    And se muestra información relevante para cada opción seleccionada
-
-  Scenario: Las opciones pertinentes se muestran correctamente en "Tarjeta Imperial Cinema"
-    When el usuario navega a la sección "Tarjeta Imperial Cinema"
-    Then las opciones pertinentes se muestran en la parte inferior
-    And se muestra información relevante para cada opción seleccionada
-
-  Scenario: Las opciones pertinentes se muestran correctamente en "Preus i Descomptes"
-    When el usuario navega a la sección "Preus i Descomptes"
-    Then las opciones pertinentes se muestran en la parte inferior
-    And se muestra información relevante para cada opción seleccionada
-
-  Scenario: Las opciones pertinentes se muestran en la parte derecha en "Promocions"
-    When el usuario navega a la sección "Promocions"
+  Scenario: Las opciones se muestran en promocions
+    When el usuario navega a la sección Promocions
     Then las opciones pertinentes se muestran en la parte derecha
-    And se muestra información relevante para "Dolby Digital" cuando es seleccionado
-    And se muestra información relevante para "e-Entrada" cuando es seleccionado
-    And se muestra información relevante para "Festes d'aniversari i lloguer de sales" cuando es seleccionado
+    And las opciones pueden ser alternadas
+
+  Scenario: Las opciones se muestran en esdeveniments
+    When el usuario navega a la sección Esdeveniments
+    Then las opciones pertinentes se muestran en la parte inferior
+    And las opciones pueden ser alternadas
+
+  Scenario: Las opciones pertinentes se muestran correctamente en Avantatges Club
+    When el usuario navega a la sección Avantatges Club
+    Then las opciones pertinentes se muestran en la parte inferior
+    And las opciones pueden ser alternadas
+
+  Scenario: Las opciones pertinentes se muestran correctamente en Punts i Premis
+    When el usuario navega a la sección Punts i Premis
+    Then las opciones pertinentes se muestran en la parte inferior
+    And las opciones pueden ser alternadas
+
+  Scenario: Las opciones pertinentes se muestran correctamente en Formulari d'Alta
+    When el usuario navega a la sección Formulari d'Alta
+    Then las opciones pertinentes se muestran en la parte inferior
+    And las opciones pueden ser alternadas
+
+  Scenario: Las opciones pertinentes se muestran correctamente en Preus i descomptes
+    When el usuario navega a la sección Preus i descomptes
+    Then las opciones pertinentes se muestran en la parte inferior
+    And las opciones pueden ser alternadas
+
+  Scenario: Las opciones no se muestran en Avis legal
+    When el usuario navega a la sección Avis legal
+    Then las opciones no se muestran

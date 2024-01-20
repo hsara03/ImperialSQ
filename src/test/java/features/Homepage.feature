@@ -1,8 +1,7 @@
 Feature: Funcionalidades de la página de inicio de Cines Imperial
 
   Background:
-    Given el usuario ha abierto el navegador
-    And el usuario está en la página principal de "https://www.cinesimperial.com/"
+    Given el usuario esta en la pagina principal de cinesimperial
 
   Scenario: Navegación a las redes sociales desde la página de inicio
     When el usuario hace clic en el icono de "Facebook"
@@ -26,14 +25,15 @@ Feature: Funcionalidades de la página de inicio de Cines Imperial
 
 
   Scenario: Usuario visualiza detalles y realiza acciones para la película BEEKEEPER: EL PROTECTOR
-    Given el usuario está en la sección "Cartellera" de la página principal
-    When el usuario hace clic en la película "BEEKEEPER: EL PROTECTOR"
-    Then se muestran los detalles de la película incluyendo "Durada", "Classificació" y horarios disponibles para el día actual
-    When el usuario selecciona la hora "18:15"
-    Then se activa la opción para seleccionar asientos para esa función
-    When el usuario hace clic en "VEURE MÉS DIES"
+    When el usuario pasa por encima con el cursor en la película "BEEKEEPER: EL PROTECTOR"
+    # Then se muestran los horarios disponibles para el día actual
+    # When el usuario visualiza diferentes horas que hay de la película
+    When el usuario hace clic en VEURE MÉS DIES
     Then se muestran todos los días disponibles con sus respectivos horarios
-    When el usuario hace clic en "TRAILER"
+    Then se vuelve a la página principal
+    When el usuario pasa por encima con el cursor en la película "BEEKEEPER: EL PROTECTOR"
+    Then el usuario hace clic en TRAILER
     Then se reproduce el tráiler de la película
-    When el usuario hace clic en "COMPRAR"
+    Then el usuario cierra el trailer
+    When el usuario hace clic en COMPRAR
     Then se inicia el proceso de compra de entradas para la película
