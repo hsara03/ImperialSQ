@@ -6,7 +6,5 @@ Feature: Visualización del mapa en la sección 'On som' de la página web de Ci
   Scenario: El mapa se inserta
     When el mapa se ha insertado
     Then el elemento canvas esta presente
-
-  Scenario: El mapa se carga correctamente
     When el mapa ha cargado datos
     Then el canvas no muestra ningun error

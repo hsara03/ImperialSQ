@@ -5,7 +5,7 @@ Feature: Navegación por las secciones principales de la página web Cines Imper
 
   Scenario: El usuario navega a la página principal haciendo clic en el logo
     When el usuario hace clic en el logo de Cines Imperial
-    Then el usuario debería ser redirigido a la página principal de https://www.cinesimperial.com/
+    Then el usuario debería ser redirigido a la página principal
 
   Scenario: El usuario navega a la sección Cartellera
     When el usuario hace clic en el enlace Cartellera

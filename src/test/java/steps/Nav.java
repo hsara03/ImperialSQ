@@ -12,7 +12,7 @@ public class Nav {
         Driver.getDriver().findElement(By.cssSelector("[alt='logo']")).click();
     }
 
-    @Then("el usuario debería ser redirigido a la página principal de https:\\/\\/www.cinesimperial.com\\/")
+    @Then("el usuario debería ser redirigido a la página principal")
     public void elUsuarioDeberíaSerRedirigidoALaPáginaPrincipalDeHttpsWwwCinesimperialCom() {
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.cinesimperial.com/index.php");
     }

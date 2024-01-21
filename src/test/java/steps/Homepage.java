@@ -5,8 +5,13 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.openqa.selenium.WebElement;
+
+import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 
 
@@ -90,27 +95,22 @@ public class Homepage {
         Assert.assertTrue(actualUrl.contains(expectedUrl), "URL does not match expected Intagram page URL.");
     }
 
+    private String previousPic;
+
     @When("el usuario hace clic en la flecha {string} del carrusel")
-    public void elUsuarioHaceClicEnLaFlechaDelCarrusel(String direction) {
+    public void elUsuarioHaceClicEnLaFlechaDelCarrusel(String direction) throws InterruptedException {
+        previousPic = Driver.getDriver().findElement(By.cssSelector(".owl-item.active img")).getAttribute("src");
         String arrowSelector = direction.equals("derecha") ? ".owl-next" : ".owl-prev";
         WebElement arrowButton = Driver.getDriver().findElement(By.cssSelector(arrowSelector));
         arrowButton.click();
-
     }
 
     @Then("el carrusel debería desplazarse a la siguiente imagen")
     public void elCarruselDeberíaDesplazarseALaSiguienteImagen() {
-        //TODO YO QUE SE TETE TIO NOSE COMO HACER ESTA MIERDA
-
-
-
-    }
-
-    @Then("el carrusel debería desplazarse a la imagen anterior")
-    public void elCarruselDeberíaDesplazarseALaImagenAnterior() {
-        //TODO YO QUE SE TETE TIO NOSE COMO HACER ESTA MIERDA
-
-
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(By.cssSelector(".owl-item.active img"), "src", previousPic)));
+        String srcActiveAfterClick = Driver.getDriver().findElement(By.cssSelector(".owl-item.active img")).getAttribute("src");
+        Assert.assertNotEquals(previousPic, srcActiveAfterClick, "La imagen activa no ha cambiado después de hacer clic.");
     }
 
     @Then("se deberían mostrar las películas en formato de póster")

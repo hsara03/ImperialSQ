@@ -14,8 +14,6 @@ Feature: Funcionalidades de la página de inicio de Cines Imperial
   Scenario: Funcionamiento de las flechas del carrusel de imágenes
     When el usuario hace clic en la flecha "derecha" del carrusel
     Then el carrusel debería desplazarse a la siguiente imagen
-    When el usuario hace clic en la flecha "izquierda" del carrusel
-    Then el carrusel debería desplazarse a la imagen anterior
 
   Scenario: Cambio entre vista de póster y lista de películas
     When el usuario selecciona la opción "Vista Póster"
@@ -24,7 +22,7 @@ Feature: Funcionalidades de la página de inicio de Cines Imperial
     Then se deberían mostrar las películas en formato de lista
 
 
-  Scenario: Usuario visualiza detalles y realiza acciones para la película BEEKEEPER: EL PROTECTOR
+  Scenario: Usuario visualiza detalles y realiza acciones para una pelicula
     When el usuario pasa por encima con el cursor en la película "BEEKEEPER: EL PROTECTOR"
     # Then se muestran los horarios disponibles para el día actual
     # When el usuario visualiza diferentes horas que hay de la película
