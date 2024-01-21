@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class theaterFeatures {
+public class TheaterFeatures {
     @When("el usuario navega a la sección Index")
     public void elUsuarioNavegaALaSecciónIndex() {
         Driver.getDriver().get("https://www.cinesimperial.com/index.php");

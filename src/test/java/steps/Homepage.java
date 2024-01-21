@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 
 
-public class homepage {
+public class Homepage {
 
     @When("el usuario hace clic en el icono de {string}")
     public void elUsuarioHaceClicEnElIconoDe(String socialMedia) {

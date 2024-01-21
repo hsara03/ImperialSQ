@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class footer {
+public class Footer {
 
     @When("el usuario hace clic en el enlace {string} en el footer")
     public void elUsuarioHaceClicEnElEnlaceEnElFooter(String arg0) {

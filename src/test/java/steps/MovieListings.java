@@ -1,7 +1,6 @@
 package steps;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -9,10 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.time.Duration;
 import java.util.List;
 
-public class movieListings {
+public class MovieListings {
 
     @When("el usuario hace clic en el botón {string}")
     public void elUsuarioHaceClicEnElBotónEnCartell(String arg0) {

@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class nav {
+public class Nav {
     @When("el usuario hace clic en el logo de Cines Imperial")
     public void elUsuarioHaceClicEnElLogoDeCinesImperial() {
         Driver.getDriver().findElement(By.cssSelector("[alt='logo']")).click();

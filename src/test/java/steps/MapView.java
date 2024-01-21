@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class mapView {
+public class MapView {
     @Given("el usuario se encuentra en On Som")
     public void elUsuarioSeEncuentraEnOnSom() {
         Driver.getDriver().get("https://www.cinesimperial.com/index.php?option=com_k2&view=item&layout=item&id=12&Itemid=118");
